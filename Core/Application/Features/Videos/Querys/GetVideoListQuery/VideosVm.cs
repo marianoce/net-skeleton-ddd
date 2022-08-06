@@ -1,7 +1,7 @@
-namespace Application.Features.Videos.Querys.GetVideoListQuery
+namespace Core.Application.Features.Videos.Querys.GetVideoListQuery
 {
     public class VideosVm
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
     }
 }
