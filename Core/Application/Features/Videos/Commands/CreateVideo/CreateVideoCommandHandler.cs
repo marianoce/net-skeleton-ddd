@@ -8,14 +8,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.Features.Videos.Commands
 {
-    public class VideoCommandHandler : IRequestHandler<VideoCommand, int>
+    public class CreateVideoCommandHandler : IRequestHandler<CreateVideoCommand, int>
     {
         private readonly IVideoRepository _videoRepository;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
         private readonly ILogger _logger;
 
-        public VideoCommandHandler(IVideoRepository videoRepository, IMapper mapper, IEmailService emailService, ILogger logger)
+        public CreateVideoCommandHandler(IVideoRepository videoRepository, IMapper mapper, IEmailService emailService, ILogger logger)
         {
             _videoRepository = videoRepository;
             _mapper = mapper;
@@ -23,7 +23,7 @@ namespace Application.Features.Videos.Commands
             _logger = logger;
         }
 
-        public async Task<int> Handle(VideoCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateVideoCommand request, CancellationToken cancellationToken)
         {
             var videoEntity = _mapper.Map<Video>(request);
             var newVideo = await _videoRepository.AddAsync(videoEntity);
