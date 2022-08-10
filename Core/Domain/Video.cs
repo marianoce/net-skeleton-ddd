@@ -1,8 +1,9 @@
+using Core.Domain.Common;
+
 namespace Domain
 {
-    public class Video
+    public class Video : BaseDomainModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public bool Active { get; set; }
     }

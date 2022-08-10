@@ -3,6 +3,7 @@ using Application.Behaviors;
 using FluentValidation;
 using MediatR;
 using Application.Exceptions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace API
 {
