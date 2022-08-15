@@ -5,9 +5,9 @@ using Infrastructure.Identity.Configurations;
 
 namespace Infrastructure.Identity
 {
-    public class CleanArchitectureIdentityDbContext : IdentityDbContext<ApplicationUser>
+    public class IdentityDbContext : IdentityDbContext<ApplicationUser>
     {
-        public CleanArchitectureIdentityDbContext(DbContextOptions<CleanArchitectureIdentityDbContext> options) : base(options)
+        public IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options)
         {
         }
 
