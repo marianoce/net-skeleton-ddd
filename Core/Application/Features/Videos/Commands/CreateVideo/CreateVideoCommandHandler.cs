@@ -10,28 +10,32 @@ namespace Application.Features.Videos.Commands
 {
     public class CreateVideoCommandHandler : IRequestHandler<CreateVideoCommand, int>
     {
-        private readonly IVideoRepository _videoRepository;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
         private readonly ILogger _logger;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CreateVideoCommandHandler(IVideoRepository videoRepository, IMapper mapper, IEmailService emailService, ILogger logger)
+        public CreateVideoCommandHandler(IMapper mapper, IEmailService emailService, ILogger logger, IUnitOfWork unitOfWork)
         {
-            _videoRepository = videoRepository;
             _mapper = mapper;
             _emailService = emailService;
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<int> Handle(CreateVideoCommand request, CancellationToken cancellationToken)
         {
             var videoEntity = _mapper.Map<Video>(request);
-            var newVideo = await _videoRepository.AddAsync(videoEntity);
+            _unitOfWork.Repository<Video>().AddEntity(videoEntity);
+            var result = await _unitOfWork.Complete();
+
+            if (result <= 0)
+                throw new Exception("Error al grabar video");
+
             _logger.LogInformation("Video: creado exitosamente");
+            await SendEmail(videoEntity);
 
-            await SendEmail(newVideo);
-
-            return newVideo.Id;
+            return videoEntity.Id;
         }
 
         private async Task SendEmail(Video video)
