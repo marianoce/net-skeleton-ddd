@@ -3,7 +3,6 @@ using Application.Features.Videos.Commands;
 using Application.Features.Videos.Commands.DeleteVideo;
 using Application.Features.Videos.Commands.UpdateVideo;
 using Application.Features.Videos.Querys.GetVideoListQuery;
-using Core.Application.Features.Videos.Querys.GetVideoListQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,4 +1,4 @@
-namespace Core.Domain.Common
+namespace Domain.Common
 {
     public class BaseDomainModel
     {

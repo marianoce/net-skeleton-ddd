@@ -1,4 +1,4 @@
-using Core.Domain.Common;
+using Domain.Common;
 
 namespace Application.Contracts.Persistence
 {

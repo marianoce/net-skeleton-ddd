@@ -1,6 +1,6 @@
 using System.Collections;
 using Application.Contracts.Persistence;
-using Core.Domain.Common;
+using Domain.Common;
 using Infrastructure.Persistence;
 
 namespace Infrastructure.Repositories

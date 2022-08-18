@@ -1,4 +1,4 @@
-using Core.Application.Features.Videos.Querys.GetVideoListQuery;
+using Application.Features.Videos.Querys.GetVideoListQuery;
 using MediatR;
 
 namespace Application.Features.Videos.Querys.GetVideoListQuery

@@ -2,7 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Application.Contracts.Identity;
 using Application.Models.Identity;
-using Core.Application.Constants;
+using Application.Constants;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;

@@ -1,5 +1,4 @@
 using Domain;
-using Domain.Common;
 
 namespace Application.Contracts.Persistence
 {

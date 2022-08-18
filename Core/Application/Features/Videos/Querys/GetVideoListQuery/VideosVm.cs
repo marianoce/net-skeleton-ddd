@@ -1,4 +1,4 @@
-namespace Core.Application.Features.Videos.Querys.GetVideoListQuery
+namespace Application.Features.Videos.Querys.GetVideoListQuery
 {
     public class VideosVm
     {

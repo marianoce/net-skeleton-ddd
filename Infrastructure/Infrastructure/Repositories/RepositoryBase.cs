@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 using Application.Contracts.Persistence;
-using Core.Domain.Common;
+using Domain.Common;
 using Domain;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;

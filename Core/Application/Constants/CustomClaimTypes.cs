@@ -1,4 +1,4 @@
-namespace Core.Application.Constants
+namespace Application.Constants
 {
     public static class CustomClaimTypes
     {
